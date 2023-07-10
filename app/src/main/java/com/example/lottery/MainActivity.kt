@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         txtGifts = findViewById(R.id.txtGifts)
+        btn = findViewById(R.id.btnLottery)
         ShowGifts()
-        findViewById<Button>(R.id.btnLottery).setOnClickListener {
+        btn.setOnClickListener {
             var num = 0;
             var index = 0
             var giftstr: String = "對不起！您沒中獎！"
@@ -35,25 +36,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             txt.text = giftstr
-            /* num = (1..1000).random()
-              if (num == 1 && gifts[0] > 0) {//機率千分之1 = 0.1%
-                  txt.text = "您抽中1獎"
-                  gifts[0] = gifts[0] - 1
-              } else if (num <= 30 && gifts[1] > 0) {//機率千分之30 = 3%
-                  txt.text = "您抽中2獎"
-                  gifts[1] = gifts[1] - 1
-              } else if (num <= 130 && gifts[2] > 0) {//機率機率千分之130 = 13%
-                  txt.text = "您抽中3獎"
-                  gifts[2] = gifts[2] - 1
-              } else if (num <= 180 && gifts[3] > 0) {//機率千分之180 = 18%
-                  txt.text = "您抽中4獎"
-                  gifts[3] = gifts[3] - 1
-              } else if (num <= 250 && gifts[4] > 0) {//機率千分之250 = 25%
-                  txt.text = "您抽中5獎"
-                  gifts[4] = gifts[4] - 1
-              } else {
-                  txt.text = "對不起！您沒中獎！"
-              }*/
             var sum = 0;
             for (item in gifts) {
                 sum += item
